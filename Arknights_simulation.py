@@ -48,14 +48,15 @@ class simulation:
         self.times_of_star4 = 0
         self.times_of_star3 = 0
 
-    def chanp(self):  # change probability
+    def change_probability(self):  # change probability
         self.levelup = max((self.times_without_star6 - 50) * 2, 0)  # 增加概率
+        k = (98 - self.levelup) / 98
         # 修改概率
         if self.levelup:
-            self.star6_p = self.levelup + 2
-            self.star5_p *= (100 - self.star6_p + 2) / 100
-            self.star4_p *= (100 - self.star6_p + 2) / 100
-            self.star3_p *= (100 - self.star6_p + 2) / 100
+            self.star6_p = 2 + self.levelup
+            self.star5_p = 8 * k
+            self.star4_p = 50 * k
+            self.star3_p = 40 * k
 
     def simulate(self):
         '''模拟抽奖一次'''
