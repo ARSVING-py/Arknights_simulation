@@ -48,7 +48,7 @@ class simulation:
         self.times_of_star4 = 0
         self.times_of_star3 = 0
 
-    def change_probability(self):  # change probability
+    def chanp(self):  # change probability
         self.levelup = max((self.times_without_star6 - 50) * 2, 0)  # 增加概率
         k = (98 - self.levelup) / 98
         # 修改概率
